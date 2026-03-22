@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدليل الشامل في الأمن السيبراني</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        cyber: {
+                            dark: '#0B0F19',
+                            card: '#111827',
+                            primary: '#00F0FF',
+                            secondary: '#00FF66',
+                            accent: '#FF003C',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #E5E7EB;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 240, 255, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 255, 102, 0.05), transparent 25%);
+            background-attachment: fixed;
+        }
+        
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00F0FF, #00FF66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .neon-border {
+            position: relative;
+        }
+        .neon-border::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #00F0FF;
+            box-shadow: 0 0 10px #00F0FF;
+            transition: width 0.3s ease;
+        }
+        .glass-card:hover .neon-border::after {
+            width: 100px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00F0FF;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen selection:bg-cyber-primary selection:text-cyber-dark">
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-16 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyber-primary/10 text-cyber-primary border border-cyber-primary/20 text-sm font-semibold mb-6">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                Google Gemini
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                الدليل الشامل في <br/>
+                <span class="gradient-text">الأمن السيبراني</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 font-bold mb-4">من التأسيس إلى الاحتراف</p>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed border-t border-b border-gray-800 py-4">
+                المرجع العملي والنظري لاحتراف الـ <span class="text-cyber-secondary">Red Teaming</span> والـ <span class="text-cyber-primary">Blue Teaming</span>
+            </p>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="container mx-auto px-4 mb-16 relative z-10">
+        <div class="bg-gradient-to-r from-gray-900 to-cyber-card rounded-2xl p-8 border border-gray-800 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-cyber-primary opacity-5 blur-[100px] rounded-full"></div>
+            <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                <svg class="w-6 h-6 text-cyber-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                مقدمة الكورس
+            </h2>
+            <p class="text-gray-300 text-lg leading-relaxed">
+                هذا الدليل ليس مجرد كتاب بل هو خارطة طريق هجومية ودفاعية. تم ترتيب الوحدات لتأخذك من الصفر (فهم الشبكات) وصولاً إلى السيطرة الكاملة على الأنظمة. كل وحدة تحتوي على الجانب النظري العميق والتطبيق العملي الرهيب.
+            </p>
+        </div>
+    </section>
+
+    <!-- Modules Grid -->
+    <main class="container mx-auto px-4 pb-20 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+            <!-- Module 0 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full">
+                <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 text-blue-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 neon-border pb-2">الوحدة (0): هندسة الشبكات</h3>
+                <p class="text-sm text-cyber-primary mb-4 font-semibold">الأساس الذي لا غنى عنه</p>
+                
+                <div class="mb-4 flex-grow">
+                    <p class="text-gray-300 text-sm mb-3"><strong class="text-white">الهدف:</strong> فهم كيف تتحدث الأجهزة مع بعضها البعض، وكيف تنتقل البيانات عبر الإنترنت. بدون هذه الوحدة أنت تائه.</p>
+                    <p class="text-white font-semibold text-sm mb-2 border-b border-gray-700 pb-1">الجانب النظري والتطبيقي:</p>
+                    <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                        <li>بروتوكولات الإنترنت: شرح عميق لـ TCP/IP و UDP.</li>
+                        <li>النماذج الشبكية: فهم نموذج OSI Model بطبقاته السبع.</li>
+                        <li>عناوين الأجهزة: الفرق بين الـ IPv4 والـ IPv6 والـ MAC Address والـ Subnetting.</li>
+                        <li>الخدمات الأساسية: كيف يعمل الـ DNS والـ DHCP والـ HTTP/S.</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="mt-4 block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold transition border border-gray-700 hover:border-blue-500">
+                    قائمة فيديوهات دورة شبكات للمبتدئين
+                </a>
+            </div>
+
+            <!-- Module 1 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full">
+                <div class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 text-purple-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 neon-border pb-2">الوحدة (1): مرحلة الأشباح (The Lab)</h3>
+                <p class="text-sm text-cyber-primary mb-4 font-semibold">وبناء المختبر</p>
+                
+                <div class="mb-4 flex-grow">
+                    <p class="text-gray-300 text-sm mb-3"><strong class="text-white">الهدف:</strong> بناء معملك الخاص المعزول وتنصيب نظام Kali Linux وتجهيز أدوات التخفي.</p>
+                    <p class="text-white font-semibold text-sm mb-2 border-b border-gray-700 pb-1">الجانب النظري والتطبيقي:</p>
+                    <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside mb-4">
+                        <li>تثبيت الأنظمة الوهمية VirtualBox و VMware.</li>
+                        <li>التعرف على واجهة كالي لينكس وأهم أدوات الاختراق المثبتة مسبقاً.</li>
+                        <li>تأمين الهوية: استخدام ProxyChains و Anonsurf لتغيير هويتك الرقمية باستمرار.</li>
+                    </ul>
+                    <p class="text-white font-semibold text-sm mb-2 border-b border-gray-700 pb-1">الروابط الرسمية:</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="bg-gray-800 px-2 py-1 rounded text-gray-300">نظام الاختراق: Kali Linux</span>
+                        <span class="bg-gray-800 px-2 py-1 rounded text-gray-300">نظام الضحية: Metasploitable 2</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="mt-4 block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold transition border border-gray-700 hover:border-purple-500">
+                    قائمة فيديوهات تثبيت وتهيئة Kali Linux
+                </a>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full">
+                <div class="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 text-emerald-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 neon-border pb-2">الوحدة (2): الاستخبارات الرقمية</h3>
+                <p class="text-sm text-cyber-primary mb-4 font-semibold">(OSINT)</p>
+                
+                <div class="mb-4 flex-grow">
+                    <p class="text-gray-300 text-sm mb-4"><strong class="text-white">الهدف:</strong> جمع المعلومات عن الأهداف باستخدام مصادر مفتوحة (أسرار المحترفين).</p>
+                    
+                    <p class="text-white font-semibold text-sm mb-2 border-b border-gray-700 pb-1">الأدوات:</p>
+                    <ul class="text-gray-400 text-sm space-y-2 list-none">
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div> <strong class="text-white">Shodan:</strong> محرك بحث الأجهزة</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div> <strong class="text-white">Exploit DB:</strong> قاعدة بيانات الثغرات</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="mt-4 block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold transition border border-gray-700 hover:border-emerald-500">
+                    فيديوهات احتراف جمع المعلومات
+                </a>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full">
+                <div class="w-12 h-12 rounded-lg bg-yellow-500/10 flex items-center justify-center mb-4 text-yellow-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 neon-border pb-2">الوحدة (3): اختراق الشبكات</h3>
+                <p class="text-sm text-cyber-primary mb-4 font-semibold">والـ Wi-Fi</p>
+                
+                <div class="mb-4 flex-grow">
+                    <p class="text-gray-300 text-sm mb-3"><strong class="text-white">الهدف:</strong> كسر تشفير الواي فاي والسيطرة على حركة المرور داخل أي شبكة.</p>
+                </div>
+                
+                <a href="#" class="mt-4 block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold transition border border-gray-700 hover:border-yellow-500">
+                    فيديوهات اختراق الواي فاي و هجمات MITM
+                </a>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full">
+                <div class="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4 text-orange-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 neon-border pb-2">الوحدة (4): صيد ثغرات الويب</h3>
+                <p class="text-sm text-cyber-primary mb-4 font-semibold">(Web Hacking)</p>
+                
+                <div class="mb-4 flex-grow">
+                    <p class="text-gray-300 text-sm mb-3"><strong class="text-white">الهدف:</strong> السيطرة على المواقع وسحب قواعد البيانات.</p>
+                    <div class="flex flex-wrap gap-2 text-xs mb-3">
+                        <span class="bg-red-900/30 text-red-400 border border-red-800 px-2 py-1 rounded">SQL Injection</span>
+                        <span class="bg-red-900/30 text-red-400 border border-red-800 px-2 py-1 rounded">XSS</span>
+                        <span class="bg-red-900/30 text-red-400 border border-red-800 px-2 py-1 rounded">CSRF</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="mt-4 block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold transition border border-gray-700 hover:border-orange-500">
+                    فيديوهات صيد ثغرات المواقع و Burp Suite
+                </a>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full">
+                <div class="w-12 h-12 rounded-lg bg-red-500/10 flex items-center justify-center mb-4 text-red-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 neon-border pb-2">الوحدة (5): اختراق الأنظمة</h3>
+                <p class="text-sm text-cyber-primary mb-4 font-semibold">(System Hacking)</p>
+                
+                <div class="mb-4 flex-grow">
+                    <p class="text-gray-300 text-sm mb-3"><strong class="text-white">الهدف:</strong> السيطرة الكاملة على الويندوز واللينكس وفتح جلسات تحكم عن بعد.</p>
+                </div>
+                
+                <a href="#" class="mt-4 block w-full text-center py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold transition border border-gray-700 hover:border-red-500">
+                    فيديوهات شرح Metasploit واختراق الأجهزة
+                </a>
+            </div>
+
+            <!-- Module 6 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full md:col-span-2 xl:col-span-3 border-cyber-secondary/30 bg-cyber-secondary/5">
+                <div class="flex items-start md:items-center flex-col md:flex-row gap-6">
+                    <div class="w-16 h-16 rounded-2xl bg-cyber-secondary/20 flex items-center justify-center flex-shrink-0 text-cyber-secondary shadow-[0_0_15px_rgba(0,255,102,0.2)]">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-bold text-white mb-1">الوحدة (6): الدفاع والتحقيق الجنائي</h3>
+                        <p class="text-sm text-cyber-secondary mb-3 font-semibold">(Blue Team)</p>
+                        <p class="text-gray-300"><strong class="text-white">الهدف:</strong> تعلم كيف تحمي نفسك وكيف تكتشف المخترقين وتطردهم.</p>
+                    </div>
+                    <a href="#" class="w-full md:w-auto px-8 py-4 rounded-lg bg-cyber-secondary/20 hover:bg-cyber-secondary/30 text-cyber-secondary font-bold transition border border-cyber-secondary/50 whitespace-nowrap text-center">
+                        فيديوهات الأمن الدفاعي
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Warning / Ethics Section -->
+        <div class="mt-16 bg-gradient-to-r from-red-900/40 to-black border-r-4 border-red-500 rounded-lg p-8 shadow-lg">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center text-red-500 flex-shrink-0">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                </div>
+                <div>
+                    <h4 class="text-red-400 font-bold text-xl mb-1">تنبيه أخلاقي هام</h4>
+                    <p class="text-gray-300 text-lg">تذكر: القوة العظيمة تأتي معها مسؤولية أعظم. استخدم هذا العلم في الخير والحماية فقط.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-sm border-t border-gray-800">
+        <p>الدليل الشامل في الأمن السيبراني - جميع الحقوق محفوظة</p>
+    </footer>
+
+</body>
+</html>
